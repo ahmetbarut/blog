@@ -9,13 +9,13 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return view('admin.src.forms.add_category');
+        return view('admin.forms.add_category');
     }
 
     public function show_all()
     {
         $categories = Category::orderBy("title")->paginate(10);
-        return view("admin.src.tables.categories",compact("categories"));
+        return view("admin.tables.categories",compact("categories"));
     }
     public function store(Request $request)
     {
@@ -40,7 +40,7 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
-        return view("admin.src.forms.category_edit",compact("category"));
+        return view("admin.forms.category_edit",compact("category"));
     }
 
     public function update(Request $request, Category $category)

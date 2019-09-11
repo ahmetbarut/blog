@@ -9,12 +9,12 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.src.index');
+        return view('admin.index');
     }
     public function settings()
     {
         $content = Content::find(1);
-        return view("admin.src.forms.settings",compact("content"));
+        return view("admin.forms.settings",compact("content"));
     }
     public function update(Request $request,Content $content)
     {

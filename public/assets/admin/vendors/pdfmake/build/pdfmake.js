@@ -7493,7 +7493,7 @@ function buildColumnWidths(columns, availableWidth) {
 
 	// http://www.freesoft.org/CIE/RFC/1942/18.htm
 	// http://www.w3.org/TR/CSS2/tables.html#width-layout
-	// http://dev.w3.org/csswg/css3-tables-algorithms/Overview.src.htm
+	// http://dev.w3.org/csswg/css3-tables-algorithms/Overview.htm
 	var minW = autoMin + starMaxMin * starColumns.length;
 	var maxW = autoMax + starMaxMax * starColumns.length;
 	if (minW >= availableWidth) {

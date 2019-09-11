@@ -20,7 +20,7 @@ class PostController extends Controller
         $langs = Lang::all();
         $images = image::all();
         $categories = Category::all();
-        return view('admin.src.forms.post_add',["langs" => $langs,"categories" => $categories,"images" => $images]);
+        return view('admin.forms.post_add',["langs" => $langs,"categories" => $categories,"images" => $images]);
     }
 
     /**
@@ -31,7 +31,7 @@ class PostController extends Controller
     public function show_all()
     {
         $post = Post::latest()->paginate(15);
-        return view("admin.src.tables.posts",["posts" => $post]);
+        return view("admin.tables.posts",["posts" => $post]);
     }
 
     /**
@@ -85,7 +85,7 @@ class PostController extends Controller
         $langs = Lang::all();
         $images = image::all();
         $categories = Category::all();
-        return view("admin.src.forms.post_edit",["langs" => $langs,"categories" => $categories,"images" => $images,"post"=>$post]);
+        return view("admin.forms.post_edit",["langs" => $langs,"categories" => $categories,"images" => $images,"post"=>$post]);
     }
 
     /**
