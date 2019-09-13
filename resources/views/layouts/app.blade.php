@@ -9,15 +9,13 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}" defer></script>
+    <link rel="stylesheet" href="{{asset('assets/admin')}}/vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('assets/admin')}}/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('assets/admin')}}/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="{{asset('assets/admin')}}/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="{{asset('assets/admin')}}/vendors/selectFX/css/cs-skin-elastic.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -76,5 +74,9 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{asset('assets/admin')}}/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="{{asset('assets/admin')}}/vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="{{asset('assets/admin')}}/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{asset('assets/admin')}}/assets/js/main.js"></script>
 </body>
 </html>

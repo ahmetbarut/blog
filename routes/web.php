@@ -46,4 +46,22 @@ Route::prefix('/admin')
 
         Route::get("settings","AdminController@settings")->name("settings");
         Route::post("settings/update/{content}","AdminController@update")->name("settings.update");
+
+        /* File Routes */        
+
+        Route::get("files","FileController@index")->name("files");
+        Route::get("file/upload","FileController@file_upload")->name("file.upload");
+        Route::post("file/upload/save","FileController@store")->name("file.upload.save");
+        Route::post("file/update/{files}","FileController@update")->name("file.update");
+        Route::delete("file/destroy/{files}","FileController@destroy")->name("file.destroy");
+
+        /* Message Routes */
+
+        Route::get("messages","ContactController@show_all")->name("messages");
+
+        /* Mail Routes */
+        Route::get("mails","MailController@index")->name("mail");
+        Route::get("mail-send/{reply}/{mail}","MailController@create")->name("mail.send");
 });
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

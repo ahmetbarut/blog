@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Files;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Lang;
-use App\image;
 use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
@@ -18,7 +18,7 @@ class PostController extends Controller
     public function index()
     {
         $langs = Lang::all();
-        $images = image::all();
+        $images = Files::all();
         $categories = Category::all();
         return view('admin.forms.post_add',["langs" => $langs,"categories" => $categories,"images" => $images]);
     }
@@ -83,7 +83,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $langs = Lang::all();
-        $images = image::all();
+        $images = Files::all();
         $categories = Category::all();
         return view("admin.forms.post_edit",["langs" => $langs,"categories" => $categories,"images" => $images,"post"=>$post]);
     }
