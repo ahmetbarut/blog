@@ -24,6 +24,19 @@ class BlogController extends Controller
             return $request->session()->flash('hata', '3 Karakterden küçük olamaz');
         }
         $results = Post::where('content', 'LIKE', "%.$request->search.%")->get();
-        return view('blog.result_search',compact("results"));
+        return view('blog.result_search',compact(["results","content"]));
+    }
+    
+    public function about()
+    {
+        $content = Content::find(1);
+        return view('blog.about',compact("content"));
+    }
+    
+    public function tags($tag)
+    {
+        $content = Content::find(1);
+        $tags = Post::where("tags","LIKE", "%denem2%")->get();
+        return view('blog.tags',compact(["tags","content"]));
     }
 }

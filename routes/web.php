@@ -6,13 +6,12 @@ Route::prefix('/')->group(function(){
     Route::get('/',"BlogController@index")->name('blog.anasayfa');
     Route::get('anasayfa',"BlogController@index")->name('blog.anasayfa');
     Route::get('gonderi/{post}',"PostController@show")->name('blog.gonderi');
-    Route::get('hakkimda',function(){
-        return view('blog.about');
-    })->name('blog.hakkimda');
+    Route::get('hakkimda',"BlogController@about")->name('blog.hakkimda');
     Route::get('iletisim',"ContactController@index")->name('blog.iletisim');
     Route::post('iletisim/kaydet',"ContactController@store")->name('blog.iletisim.kaydet');
     Route::get('arama',"BlogController@search")->name('blog.search');
     Route::get('kategori/{id}',"CategoryController@show")->name('blog.category');
+    Route::get('tags/{tags}',"BlogController@tags")->name("blog.tags");
 });
 
 Auth::routes(['register' => false]);

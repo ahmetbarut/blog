@@ -13,8 +13,8 @@
                 </div>
                 @if($post->code !="")
                 <div class="">
-                    <pre class="language-{{$post->programing_lang}}">
-                        <code class="language-{{$post->programing_lang}}">
+                    <pre class="language-php">
+                        <code class="language-php">
                             {{$post->code}}
                         </code>
                     </pre>

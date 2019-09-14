@@ -51,17 +51,6 @@
                 </div>
             </div>
             <div class="row form-group">
-                <div class="col-12 col-md-9">
-                <label for="select">Programlama Dili</label>
-                    <select name="lang" id="pdili" class="form-control">
-                        <option selected>Programlama Dili Seç</option>
-                            @foreach ($langs as $lang)
-                            <option value="{{$lang->name}}">{{$lang->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-            <div class="row form-group">
                     <div class="col-12 col-md-9">
                     <label for="select">Kategori</label>
                         <select name="category" id="pdili" class="form-control">

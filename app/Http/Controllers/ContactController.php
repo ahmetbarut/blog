@@ -36,24 +36,4 @@ class ContactController extends Controller
         $request->session()->flash('success', 'Mesajınızız İletildi.');
         return redirect()->route('blog.iletisim');
     }
-
-    public function show(Contact $contact)
-    {
-        //
-    }
-
-    public function edit(Contact $contact)
-    {
-        //
-    }
-
-    public function update(Request $request, Contact $contact)
-    {
-        //
-    }
-
-    public function destroy(Contact $contact)
-    {
-        //
-    }
 }

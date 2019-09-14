@@ -5,41 +5,24 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Files;
 use App\Post;
+use App\Content;
 use Illuminate\Http\Request;
-use App\Lang;
 use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $langs = Lang::all();
         $images = Files::all();
         $categories = Category::all();
-        return view('admin.forms.post_add',["langs" => $langs,"categories" => $categories,"images" => $images]);
+        return view('admin.forms.post_add',["categories" => $categories,"images" => $images]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function show_all()
     {
         $post = Post::latest()->paginate(15);
         return view("admin.tables.posts",["posts" => $post]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -53,7 +36,6 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
         $post->code = $request->code;
-        $post->programing_lang = $request->lang;
         $post->tags = $request->tags;
         $post->img = $request->image;
         $post->category_id = $request->category;
@@ -63,38 +45,19 @@ class PostController extends Controller
         return back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
-     */
     public function show(Post $post)
     {
-        return view("blog.showPost",compact("post"));
+        $content = Content::find(1);
+        return view("blog.showPost",compact(["post","content"]));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Post $post)
     {
-        $langs = Lang::all();
         $images = Files::all();
         $categories = Category::all();
-        return view("admin.forms.post_edit",["langs" => $langs,"categories" => $categories,"images" => $images,"post"=>$post]);
+        return view("admin.forms.post_edit",["categories" => $categories,"images" => $images,"post"=>$post]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Post $post)
     {
         $request->validate([
@@ -107,7 +70,6 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
         $post->code = $request->code;
-        $post->programing_lang = $request->lang;
         $post->tags = $request->tags;
         $post->img = $request->image;
         $post->category_id = $request->category;
@@ -117,12 +79,6 @@ class PostController extends Controller
         return back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Post $post)
     {
         $post->delete();

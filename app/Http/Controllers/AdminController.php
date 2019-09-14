@@ -17,7 +17,7 @@ class AdminController extends Controller
         return view("admin.forms.settings",compact("content"));
     }
     public function update(Request $request,Content $content)
-    {
+    {   /* Content update  */
         $content->name = $request->name;
         $content->logo = $request->logo;
         $content->instagram = $request->instagram;

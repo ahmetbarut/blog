@@ -15,9 +15,9 @@
                         <h4 class="mb-3 mt-3"><strong>{{$post->title}}</strong></h4>
                         <p style="width:50px !important;">{!! substr($post->content,0,250) !!}</p>
                         <p>by <a><strong>{{$post->author}}</strong></a>, {{substr($post->created_at,0,10)}}</p>
-                        <p><?php $tags = explode(',',$post->tags);foreach ($tags as $tag) {
-                            echo "<a href=".$tag.">#".$tag."</a> ";
-                        }?></p>
+                        <p><?php $tags = explode(',',$post->tags);foreach ($tags as $tag) {?>
+                        <a href="{{route("blog.tags",$tag)}}">#{{$tag}}</a>
+                        <?php }?></p>
                         <a href="{{route("blog.gonderi",$post->id)}}" class="btn btn-primary btn-md">Okumaya Devam Et</a>
                         </div>
                     </div>
