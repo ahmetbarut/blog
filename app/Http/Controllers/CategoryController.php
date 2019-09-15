@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return view('admin.forms.add_category');
+        return view('admin.forms.add_category',);
     }
 
     public function show_all()

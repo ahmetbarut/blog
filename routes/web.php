@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Post;
 
 Route::prefix('/')->group(function(){
     Route::get('/',"BlogController@index")->name('blog.anasayfa');
@@ -12,6 +13,7 @@ Route::prefix('/')->group(function(){
     Route::get('arama',"BlogController@search")->name('blog.search');
     Route::get('kategori/{id}',"CategoryController@show")->name('blog.category');
     Route::get('tags/{tags}',"BlogController@tags")->name("blog.tags");
+    Route::get('deneme',"BlogController@deneme");
 });
 
 Auth::routes(['register' => false]);
@@ -61,6 +63,15 @@ Route::prefix('/admin')
         /* Mail Routes */
         Route::get("mails","MailController@index")->name("mail");
         Route::get("mail-send/{reply}/{mail}","MailController@create")->name("mail.send");
+
+        /* Profile Routes */
+        Route::get('my-profile',"AdminController@profile")->name("profile");
+        Route::post('my-profile/update/{user}',"AdminController@profile_update")->name("profile.update");
+
+        /* Galery */
+
+        Route::get("galery","FileController@galery")->name("galery");
+
 });
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

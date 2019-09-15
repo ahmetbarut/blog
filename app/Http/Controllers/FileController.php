@@ -84,4 +84,9 @@ class FileController extends Controller
         }
         return back();
     }
+    public function galery()
+    {
+        $galery = Files::where("extension",["jpg","png","jpeg"])->get();
+        return view("admin.galery",compact("galery"));
+    }
 }
