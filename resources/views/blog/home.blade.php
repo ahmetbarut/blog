@@ -25,14 +25,13 @@
             <div class="collapse navbar-collapse" id="basicExampleNav">
                 <ul class="navbar-nav mr-auto smooth-scroll">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route("blog.anasayfa")}}">Anasayfa(Tags)
-                        </a>
+                        <a class="nav-link" href="{{route("blog.home")}}">Anasayfa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('blog.hakkimda')}}">Hakkımda</a>
+                        <a class="nav-link" href="{{route('blog.about')}}">Hakkımda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('blog.iletisim')}}">İletişim</a>
+                        <a class="nav-link" href="{{route('blog.contact')}}">İletişim</a>
                     </li>
                 </ul>
                 <div class="row">

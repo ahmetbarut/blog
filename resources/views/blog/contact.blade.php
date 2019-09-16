@@ -13,7 +13,7 @@
                            {{ Session::get('success') }}
                        </p>
                    @endif
-                    <form method="POST" action="{{route('blog.iletisim.kaydet')}}">
+                    <form method="POST" action="{{route('blog.contact.save')}}">
                         @csrf
                         <div class="md-form form-sm"> <i class="fa fa-user prefix grey-text"></i>
                             <input type="text" name="name" id="form3" class="@error('name') is-invalid @enderror form-control form-control-sm">

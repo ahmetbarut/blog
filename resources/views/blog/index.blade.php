@@ -18,7 +18,7 @@
                         <p><?php $tags = explode(',',$post->tags);foreach ($tags as $tag) {?>
                         <a href="{{route("blog.tags",$tag)}}">#{{$tag}}</a>
                         <?php }?></p>
-                        <a href="{{route("blog.gonderi",$post->id)}}" class="btn btn-primary btn-md">Okumaya Devam Et</a>
+                        <a href="{{route("blog.post",$post->id)}}" class="btn btn-primary btn-md">Okumaya Devam Et</a>
                         </div>
                     </div>
                     @endforeach

@@ -34,6 +34,6 @@ class ContactController extends Controller
         $contact->message = $request->message;
         $contact->save();
         $request->session()->flash('success', 'Mesajınızız İletildi.');
-        return redirect()->route('blog.iletisim');
+        return redirect()->route('blog.contact');
     }
 }

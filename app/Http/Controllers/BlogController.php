@@ -34,11 +34,9 @@ class BlogController extends Controller
         $request->validate([
             'search' => "required|min:3"
         ]);
-        if ($request->search < 3) {
-            return $request->session()->flash('hata', '3 Karakterden küçük olamaz');
-        }
+        $content = Content::find(1);
         $results = Post::where('content', 'LIKE', "%.$request->search.%")->get();
-        return view('blog.result_search',compact(["results","content"]));
+        return view('blog.result_search',["results"=>$results, "content" => $content]);
     }
     
     public function about()
