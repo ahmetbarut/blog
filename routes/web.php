@@ -72,4 +72,4 @@ Route::prefix('/admin')
 
 });
 
-Route::get('cikis-yap', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
