@@ -5,3 +5,5 @@ cd blog
 composer install 
 php artisan migrate
 ```
+![](/blog.png)
+![](/admin.png)
