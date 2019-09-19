@@ -12,8 +12,8 @@ class BlogController extends Controller
 {
     public function index(Request $request)
     {
-        if ($data = Visit::where("ip",$request->ip())->first()->id) {
-            $visit = Visit::find($data);
+        if ($data = Visit::where("ip",$request->ip())->first()) {
+            $visit = Visit::find($data->id);
             $visit->ip = $request->ip();
             $visit->language = $request->server("HTTP_ACCEPT_LANGUAGE");
             $visit->save();
@@ -26,7 +26,7 @@ class BlogController extends Controller
 
         $posts = Post::latest()->paginate(5);
         $categories = Category::all();
-        $content = Content::find(1);
+        $content =Content::find(1);
         return view('blog.index',['posts'=> $posts,'categories' =>$categories,'content'=>$content]);
     }
     public function search(Request $request)
@@ -48,7 +48,7 @@ class BlogController extends Controller
     public function tags($tag)
     {
         $content = Content::find(1);
-        $tags = Post::where("tags","LIKE", "%denem2%")->get();
+        $tags = Post::where("tags","LIKE", "%".$tag."%")->get();
         return view('blog.tags',compact(["tags","content"]));
     }
 

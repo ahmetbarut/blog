@@ -17,7 +17,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">{{$content->name}}</a>
+            <a class="navbar-brand" href="{{route("blog.home")}}">{{$content->name}}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -72,14 +72,6 @@
   <div id="intro" class="view">
       <div class="mask rgba-black-strong">
           <div class="container-fluid d-flex align-items-center justify-content-center h-100">
-              {{-- <div class="row d-flex justify-content-center text-center">
-                  <div class="col-md-10">
-                      <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">Adventure</h2>
-                      <hr class="hr-light">
-                      <h4 class="white-text my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</h4>
-                      <button type="button" id="main" class="btn btn-outline-white">Read more<i class="fa fa-book ml-2"></i></button>
-                  </div>
-              </div> --}}
           </div>
       </div>
   </div>

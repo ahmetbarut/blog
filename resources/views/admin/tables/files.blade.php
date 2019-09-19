@@ -78,7 +78,7 @@
                                             <input type="text" name="fileName" value="{{$file->name}}" class="form-control">
                                         </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal Et</button>
+                                        <button type="reset" class="btn btn-secondary" data-dismiss="modal">İptal Et</button>
                                         <button type="submit" class="btn btn-primary">Dosya Adını Değiştir</button>
                                     </div>
                                     </div>

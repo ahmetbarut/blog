@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Content;
-use App\Post;
-use App\Visit;
-use App\Files;
-use App\User;
+use App\Category; // Kategori Modeli  
+use App\Content; // İçerik Modeli   
+use App\Post; // Gönderiler Modeli  
+use App\Visit; // Ziyaretçiler Modeli 
+use App\Files; // Dosya Modeli 
+use App\User; // Kullanıcı Modeli  
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -17,30 +17,30 @@ class AdminController extends Controller
     {
 
         $data = [
-            "posts" => Post::all()->count() ,
-            "categories" => Category::all()->count(),
+            "posts" => Post::all()->count() , 
+            "categories" => Category::all()->count(), 
             "visits" => Visit::all()->count(),
             "files" => Files::all()->count(),
         ];
+        // toplam satır döndürür ve admin/index.blade.php dosyasına gönderir
         return view('admin.index',$data);
     }
     public function settings()
     {
-        $content = Content::find(1);
+        $content = Content::find(1); // içerik id'si 1 olan kaydı getirir ve admin/form/settings.blade.php dosyasına gönderir
         return view("admin.forms.settings",compact("content"));
     }
     public function update(Request $request,Content $content)
-    {   /* Content update  */
+    {   /* İçerik Güncelleme İşlemi  */
         $content->name = $request->name;
         $content->logo = $request->logo;
         $content->instagram = $request->instagram;
         $content->github = $request->github;
         $content->about = $request->about;
-        $content->bodyDescription = $request->bodyDescription;
         $content->linkedin = $request->linkedin;
         $content->email = $request->email;
-        $content->save();
-        $request->session()->flash("success","Başarıyla Güncellendi!");
+        $content->save(); // Kaydetme
+        $request->session()->flash("success","Başarıyla Güncellendi!"); // mesaj. Flash data ile gidiyor belli bir süre sonra yok olur
         return back();
     }
 
@@ -51,6 +51,7 @@ class AdminController extends Controller
     
     public function profile_update(Request $request, User $user)
     {
+        // Profil güncelleme işlemi
         $user->name = $request->name;
         $user->email = $request->email;
         $user->profile = $request->profile;

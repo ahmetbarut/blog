@@ -28,7 +28,7 @@
             </div>
             <div class="row form-group">
                 <div class="col col-sm-3">
-                    <button type="" class="btn btn-outline-danger btn-lg btn-block">İptal Et</button>
+                    <button type="reset" class="btn btn-outline-danger btn-lg btn-block">İptal Et</button>
                 </div>
                 <div class="col col-sm-3 ml-auto">
                     <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Paylaş</button>

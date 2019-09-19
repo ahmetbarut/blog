@@ -28,11 +28,6 @@
             </div>
             <div class="row form-group">
                 <div class="col col-sm-12">
-                    <textarea name="code" id="textarea-input" rows="9" placeholder="Kod" class="form-control"></textarea>
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col col-sm-12">
                     <input type="text" name="tags" placeholder="Taglar" class="form-control">
                 </div>
             </div>
@@ -63,7 +58,7 @@
                 </div>
             <div class="row form-group">
                 <div class="col col-sm-3">
-                    <button type="" class="btn btn-outline-danger btn-lg btn-block">İptal Et</button>
+                    <button type="reset" class="btn btn-outline-danger btn-lg btn-block">İptal Et</button>
                 </div>
                 <div class="col col-sm-3 ml-auto">
                     <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Paylaş</button>
@@ -73,10 +68,7 @@
     </div>
 @endsection
 @section('script')
-<script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.js"
-integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-crossorigin="anonymous"></script>
+
     <script>
         // Jquery resim değiştirme
         $("#image").change(function() {
@@ -87,10 +79,6 @@ crossorigin="anonymous"></script>
             $("#imgs").attr("src",img);
         });
         // Ckeditor
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
+        CKEDITOR.replace( 'content' );
     </script>
 @endsection

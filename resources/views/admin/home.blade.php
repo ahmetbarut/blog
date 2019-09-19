@@ -107,6 +107,8 @@
     <script src="{{url('assets/admin')}}/vendors/jqvmap/dist/jquery.vmap.min.js"></script>
     <script src="{{url('assets/admin')}}/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
     <script src="{{url('assets/admin')}}/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="{{url("node_modules/ckeditor")}}/ckeditor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
     <script>
         "use strict";
             (function($) {
@@ -123,8 +125,8 @@
             normalizeFunction: 'polynomial'
         });
     })(jQuery);
+    </script>
     @yield("script")
-</script>
 </body>
 
 </html>

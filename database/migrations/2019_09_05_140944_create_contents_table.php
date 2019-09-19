@@ -15,15 +15,16 @@ class CreateContentsTable extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->nullable();
-            $table->string('logo')->nullable();
-            $table->string('facebook')->nullable();
-            $table->string('instagram')->nullable();
-            $table->string('linkedin')->nullable();
-            $table->string('github')->nullable();
-            $table->string('email')->nullable();
-            $table->string('youtube')->nullable();
-            $table->string('pint')->nullable();
+            $table->string('name')->default("Girilmedi")->nullable();
+            $table->string('logo')->default("Girilmedi")->nullable();
+            $table->string('facebook')->default("Girilmedi")->nullable();
+            $table->text('about')->default("Girilmedi")->nullable();
+            $table->string('instagram')->default("Girilmedi")->nullable();
+            $table->string('linkedin')->default("Girilmedi")->nullable();
+            $table->string('github')->default("Girilmedi")->nullable();
+            $table->string('email')->default("Girilmedi")->nullable();
+            $table->string('youtube')->default("Girilmedi")->nullable();
+            $table->string('pint')->default("Girilmedi")->nullable();
             $table->timestamps();
         });
     }

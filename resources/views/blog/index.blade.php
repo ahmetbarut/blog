@@ -14,7 +14,7 @@
                         <img class="d-block w-100" src="{{$post->img}}" alt="First slide">
                         <h4 class="mb-3 mt-3"><strong>{{$post->title}}</strong></h4>
                         <p style="width:50px !important;">{!! substr($post->content,0,250) !!}</p>
-                        <p>by <a><strong>{{$post->author}}</strong></a>, {{substr($post->created_at,0,10)}}</p>
+                        <p>Yazar <strong>{{$post->author}}</strong>, {{substr($post->created_at,0,10)}}</p>
                         <p><?php $tags = explode(',',$post->tags);foreach ($tags as $tag) {?>
                         <a href="{{route("blog.tags",$tag)}}">#{{$tag}}</a>
                         <?php }?></p>
@@ -25,19 +25,12 @@
                 <div class="mx-auto" style="width:150px">{{ $posts->links() }}</div>
             </div>
                 <div class="col-md-3">
-                    <h4>Kategori</h4>
-					<table class="table table-striped">
-						<thead>
-							<th>Kategori Adı</th>
-						</thead>
-						<tbody>
-							@foreach($categories as $category)
-							<tr>
-								<th><a href="{{route("blog.category",$category->id)}}">{{$category->title}}</a></th>
-							</tr>
-							@endforeach
-						</tbody>
-					</table>
+                    <h4>Kategoriler</h4>
+					@foreach($categories as $category)
+					<ul style="list-style:none;">
+						<li scope="row"><a href="{{route("blog.category",$category->id)}}" class="text-primary">{{$category->title}}</a></li>
+					</ul>
+					@endforeach
                 </div>
             </div>
         </section>

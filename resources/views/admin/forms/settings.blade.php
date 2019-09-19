@@ -37,12 +37,7 @@
         </div>
         <div class="row form-group">
             <div class="col col-sm-12">
-                <input type="text" name="about" value="{{$content->about}}" placeholder="Hakkımda" class="form-control editor">
-            </div>
-        </div>
-        <div class="row form-group">
-            <div class="col col-sm-12">
-                <input type="text" name="bodyDescirption" value="{{$content->bodyDescription}}" placeholder="Gövde Açıklaması" class="form-control editor">
+                <textarea type="text" name="about" value="{{$content->about}}" placeholder="Hakkımda" class="form-control editor"></textarea>
             </div>
         </div>
         <div class="row form-group">
@@ -57,7 +52,7 @@
         </div>
         <div class="row form-group">
             <div class="col col-sm-3">
-                <button type="" class="btn btn-outline-danger btn-lg btn-block">İptal Et</button>
+                <button type="reset" class="btn btn-outline-danger btn-lg btn-block">İptal Et</button>
             </div>
             <div class="col col-sm-3 ml-auto">
                 <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Güncelle</button>
@@ -66,4 +61,9 @@
     </form>
 </div>
 
+@endsection
+@section('script')
+    <script>
+        CKEDITOR.replace( 'about' );
+    </script>
 @endsection

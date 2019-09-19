@@ -10,9 +10,9 @@ Etiketler
             <div class="card-body">
               <h5 class="card-title">{{$tag->title}}</h5>
               <p class="card-text"> 
-                  {{substr($tag->content,0,250)}}
+                  {!! substr($tag->content,0,250) !!}
               </p>
-            <a href="{{route("blog.gonderi",$tag->id.'#main')}}" class="btn-link">Okumaya Devam Et</a>
+            <a href="{{route("blog.post",$tag->id.'#main')}}" class="btn-link">Okumaya Devam Et</a>
             </div>
         </div>
     @endforeach

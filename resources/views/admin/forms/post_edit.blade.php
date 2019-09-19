@@ -98,10 +98,6 @@ crossorigin="anonymous"></script>
             $("#imgs").attr("src",img);
         });
         // Ckeditor
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
+        CKEDITOR.replace( 'content' );
     </script>
 @endsection

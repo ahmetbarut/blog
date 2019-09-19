@@ -11,7 +11,6 @@
                         <tr>
                             <th scope="col">Başlık</th>
                             <th scope="col">Yazar</th>
-                            <th scope="col">Kategori</th>
                             <th scope="col">Tarih</th>
                             <th scope="col">İşlem</th>
                         </tr>
@@ -21,7 +20,6 @@
                         <tr>
                             <td>{{$post->title}}</td>
                             <td>{{$post->author}}</td>
-                            <td>{{$post->category_id}}</td>
                             <td>{{$post->created_at}}</td>
                             <td>
                                 <div class="row">
