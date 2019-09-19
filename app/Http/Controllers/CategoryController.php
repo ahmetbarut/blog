@@ -15,7 +15,6 @@ class CategoryController extends Controller
     public function show_all()
     {
         $categories = Category::orderBy("title")->paginate(10);
-        dd(Category::orderBy("title")->post);
         return view("admin.tables.categories",compact(["categories"]));
     }
     public function store(Request $request)
