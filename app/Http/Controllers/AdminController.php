@@ -54,7 +54,7 @@ class AdminController extends Controller
         // Profil güncelleme işlemi
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->profile = $request->profile;
+        $user->img = $request->profile;
         if (strlen($request->password) != 0) {
             $user->password = Hash::make($request->password);
         }
