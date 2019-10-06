@@ -5,5 +5,10 @@ cd blog
 composer install 
 php artisan migrate
 ```
+
+**Varsayılan Giriş Bilgileri**
+```
+root@ahmetbrt.com:123456
+```
 ![](/blog.png)
 ![](/admin.png)
