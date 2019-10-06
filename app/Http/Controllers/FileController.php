@@ -55,7 +55,6 @@ class FileController extends Controller
             $request->session()->flash("fail","Dosya Yüklenmedi!!!");
         }
         return back();
-            // 
      
     }
 
@@ -86,7 +85,7 @@ class FileController extends Controller
     }
     public function galery()
     {
-        $galery = Files::where("extension",["jpg","png","jpeg"])->get();
+        $galery = Files::whereIn("extension",["jpg","png","jpeg"])->get();
         return view("admin.galery",compact("galery"));
     }
 }

@@ -104,7 +104,7 @@
                 <div class="row py-4 d-flex align-items-center">
 
                     <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                        <h6 class="mb-0 white-text">Get connected with us on social networks!</h6>
+                    
                     </div>
 
                     <div class="col-md-6 col-lg-7 text-center text-md-right">

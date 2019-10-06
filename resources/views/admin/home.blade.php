@@ -52,7 +52,6 @@
                     <li class="media"><a href="{{route("admin.settings")}}">Ayarlar</a></li>
                     <li class="media"><a href="{{route("admin.files")}}">Dosya Yükleme</a></li>
                     <li class="media"><a href="{{route("admin.messages")}}">Mesajlar</a></li>
-                    <li class="media"><a href="ui-cards">MAİL (İşlevsiz)</a></li>
                     <li class="media"><a href="{{route("admin.galery")}}">Galeri</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->

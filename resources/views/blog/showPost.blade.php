@@ -11,15 +11,6 @@
                     <p class="justify p-5">{!! $post->content !!}</p>
                     <p class="justify"><b>Yazar</b>: {{$post->author}} {{$post->created_at}} </p>
                 </div>
-                @if($post->code !="")
-                <div class="">
-                    <pre class="language-php">
-                        <code class="language-php">
-                            {{$post->code}}
-                        </code>
-                    </pre>
-                </div>
-                @endif
             </section>
         </div>
     </main>

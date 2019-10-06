@@ -6,12 +6,31 @@ use App\Category;
 use App\Content;
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 use App\Visit;
+use Illuminate\Support\Facades\Hash;
+
 
 class BlogController extends Controller
 {
     public function index(Request $request)
     {
+        if(Content::all()->count() == 0){
+            // Varsayılan
+            $content = new Content;
+            $content->logo = url("uploads/default_logo.png");
+            $content->name = config("app.name");
+            $content->save();
+
+            // Varsayılan Kullanıcı
+            $user = new User;
+            $user->name = "root";
+            $user->email = "root@ahmetbrt.com";
+            $user->image =url("uploads/default_avatar.png");
+            $user->password = Hash::make("123456");
+            $user->save();
+        }
+
         if ($data = Visit::where("ip",$request->ip())->first()) {
             $visit = Visit::find($data->id);
             $visit->ip = $request->ip();
@@ -36,7 +55,8 @@ class BlogController extends Controller
         ]);
         $content = Content::find(1);
         $results = Post::where('content', 'LIKE', "%.$request->search.%")->get();
-        return view('blog.result_search',["results"=>$results, "content" => $content]);
+
+        return view('blog.result_search',["results"=>$results,"word" => $request->search, "content" => $content]);
     }
     
     public function about()

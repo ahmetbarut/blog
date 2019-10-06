@@ -17,36 +17,43 @@
         @csrf
         <div class="row form-group">
             <div class="col col-sm-12">
+                <label for="name">İsim</label>
                 <input type="text" name="name" value="{{$content->name}}" placeholder="İsim" class="form-control editor">
             </div>
         </div>
         <div class="row form-group">
         <div class="col col-sm-12">
+            <label for="logo">Logo <small>Sayfanın sekmede görünen logosu</small></label>
             <input type="text" name="logo" value="{{$content->logo}}" placeholder="Logo" class="form-control editor">
             </div>
         </div>
         <div class="row form-group">
             <div class="col col-sm-12">
+                <label for="isntagram">İnstagram</label>
                 <input type="text" name="instagram" value="{{$content->instagram}}" placeholder="İnstagram" class="form-control editor">
             </div>
         </div>
         <div class="row form-group">
             <div class="col col-sm-12">
+                <label for="github">Github</label>
                 <input type="text" name="github" value="{{$content->github}}" placeholder="Github" class="form-control editor">
             </div>
         </div>
         <div class="row form-group">
             <div class="col col-sm-12">
+                <label for="about">Hakkımda</label>
                 <textarea type="text" name="about" value="{{$content->about}}" placeholder="Hakkımda" class="form-control editor"></textarea>
             </div>
         </div>
         <div class="row form-group">
             <div class="col col-sm-12">
+                <label for="linkedin">Linkedin</label>
                 <input type="text" name="linkedin" value="{{$content->linkedin}}" placeholder="Linkedin" class="form-control editor">
             </div>
         </div>
         <div class="row form-group">
             <div class="col col-sm-12">
+                <label for="email">E-Posta</label>
                 <input type="text" name="email" value="{{$content->email}}" placeholder="E-Posta" class="form-control editor">
             </div>
         </div>

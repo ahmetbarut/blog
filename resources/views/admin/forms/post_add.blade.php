@@ -23,6 +23,19 @@
             </div>
             <div class="row form-group">
                 <div class="col col-sm-12">
+                    <span>Eğer Kod Yazılacksa Bu Kodlar ile Sayfada Editör Gibi Alan Oluşacaktır.</span><br>
+                    <code>
+                        {{
+                            '<pre class="language-php">
+                                <code class="language-php">
+                                </code>
+                            </pre>'
+                        }}
+                    </code>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-sm-12">
                     <textarea name="content" id="editor" rows="9" placeholder="İçerik" class="form-control"></textarea>
                 </div>
             </div>
