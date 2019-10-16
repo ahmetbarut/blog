@@ -8,9 +8,8 @@ class AdminHelper{
     {
         if (Storage::move($oldName, $newName)):
             return $newName;
-        else:
-            return false;
         endif;
+        return false;
     }    
 
     static public function fileSize($bytes)
